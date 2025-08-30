@@ -1,0 +1,36 @@
+{
+  "name": "aria-voice-assistant",
+  "type": "Microsoft.Web/sites",
+  "apiVersion": "2022-03-01",
+  "location": "[resourceGroup().location]",
+  "tags": {
+    "project": "aria",
+    "environment": "production"
+  },
+  "dependsOn": [
+    "[resourceId('Microsoft.Web/serverfarms', 'AriaPlan')]"
+  ],
+  "properties": {
+    "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', 'AriaPlan')]",
+    "siteConfig": {
+      "linuxFxVersion": "PYTHON|3.11",
+      "webSocketsEnabled": true,
+      "appCommandLine": "uvicorn main:app --host 0.0.0.0 --port 8000",
+      "alwaysOn": true,
+      "cors": {
+        "allowedOrigins": ["*"]
+      },
+      "appSettings": [
+        {
+          "name": "SCM_DO_BUILD_DURING_DEPLOYMENT",
+          "value": "true"
+        },
+        {
+          "name": "ENABLE_ORYX_BUILD",
+          "value": "true"
+        }
+      ]
+    },
+    "httpsOnly": true
+  }
+}

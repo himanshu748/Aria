@@ -1,0 +1,13 @@
+gunicorn==20.1.0
+uvicorn[standard]==0.24.0
+fastapi==0.104.1
+jinja2==3.1.2
+python-dotenv==1.0.0
+requests==2.31.0
+assemblyai==0.21.0
+google-generativeai==0.3.0
+websockets==12.0
+google-search-results==2.4.2
+murf==2.0.2
+python-multipart==0.0.6
+aiofiles==23.2.1

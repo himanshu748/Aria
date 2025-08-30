@@ -1,0 +1,17 @@
+# Azure App Service Configuration for Aria
+
+# Python version
+PYTHON_VERSION=3.9
+
+# App Service settings
+PORT=8000
+SCM_DO_BUILD_DURING_DEPLOYMENT=true
+ENABLE_ORYX_BUILD=true
+POST_BUILD_SCRIPT_PATH=post-build.sh
+PRE_BUILD_SCRIPT_PATH=pre-build.sh
+
+# WebSocket support
+WEBSITES_ENABLE_APP_SERVICE_STORAGE=false
+
+# Logging
+WEBSITE_HTTPLOGGING_RETENTION_DAYS=7
